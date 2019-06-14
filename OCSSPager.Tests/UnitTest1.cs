@@ -59,7 +59,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderOneOfOneAndNoBloomSucceeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 1), 0).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 1), 0, null).ToList();
          Assert.AreEqual(1, opts.Count, "Count not 1");
          Assert.IsTrue(opts[0].IsCurrent, "opt[0] not current");
          Assert.AreEqual(1, opts[0].PageNum, "opt[0] page not 1");
@@ -67,7 +67,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderOneOfTwoAndNoBloomSucceeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 2), 0).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 2), 0, null).ToList();
          Assert.AreEqual(2, opts.Count, "Count not 2");
          Assert.IsTrue(opts[0].IsCurrent, "opt[0] is not current");
          Assert.AreEqual(1, opts[0].PageNum, "opt[0] page not 1");
@@ -77,7 +77,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderTwoOfTwoAndNoBloomSucceeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(2, 2), 0).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(2, 2), 0, null).ToList();
          Assert.AreEqual(2, opts.Count, "Count not 2");
          Assert.IsFalse(opts[0].IsCurrent, "opt[0] is current");
          Assert.AreEqual(1, opts[0].PageNum, "opt[0] page not 1");
@@ -87,7 +87,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderOneOfOneWithBloom1Succeeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 1), 1).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 1), 1, null).ToList();
          Assert.AreEqual(1, opts.Count, "Count not 1");
          Assert.IsTrue(opts[0].IsCurrent, "opt[0] not current");
          Assert.AreEqual(1, opts[0].PageNum, "opt[0] page not 1");
@@ -95,7 +95,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderOneOfTwoWithBloom1Succeeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 2), 1).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(1, 2), 1, null).ToList();
          Assert.AreEqual(2, opts.Count, "Count not 2");
          Assert.IsTrue(opts[0].IsCurrent, "opt[0] is not current");
          Assert.AreEqual(1, opts[0].PageNum, "opt[0] page not 1");
@@ -105,7 +105,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderTwoOfTwoWithBloom1Succeeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(2, 2), 1).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(2, 2), 1, null).ToList();
          Assert.AreEqual(2, opts.Count, "Count not 2");
          Assert.IsFalse(opts[0].IsCurrent, "opt[0] is current");
          Assert.AreEqual(1, opts[0].PageNum, "opt[0] page not 1");
@@ -115,7 +115,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderFiveofTenWithNoBloomSucceeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(5, 10), 0).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(5, 10), 0, null).ToList();
          Assert.AreEqual(3, opts.Count, "Count not 3");
          Assert.IsFalse(opts[0].IsCurrent, "opt[0] is current");
          Assert.AreEqual(1, opts[0].PageNum, "opt[0] page not 1");
@@ -127,7 +127,7 @@ namespace OCSSPager.Tests {
 
       [TestMethod]
       public void PageSelectBuilderFiveofTenWithBloom1Succeeds() {
-         var opts = PageSelectOption.BuildOpts(new PageResultStats(5, 10), 1).ToList();
+         var opts = PageSelectOption.BuildOpts(new PageResultStats(5, 10), 1, null).ToList();
          Assert.AreEqual(5, opts.Count, "Count not 5");
 
          Assert.IsFalse(opts[0].IsCurrent, "opt[0] is current");
