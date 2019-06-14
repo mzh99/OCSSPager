@@ -1,7 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <RootNamespace>OCSS.Pager</RootNamespace>
+    <PackageId>OCSS.Pager</PackageId>
+    <Authors>MH</Authors>
+    <Company>OC Software Solutions</Company>
+    <Description>Paging Utility for web or other</Description>
+    <Copyright>© 2019, OC Software Solutions</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>OCSS Utility Pager</PackageTags>
   </PropertyGroup>
 
 </Project>
